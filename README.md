@@ -15,7 +15,7 @@ La compilación de producción se valida con `npm run build`. Define `NEXT_PUBLI
 
 El contenido editable vive en `content/site.ts`:
 
-- **Videos:** agrega objetos reales al arreglo `videos`. Incluye título, descripción, categoría, URL de YouTube y miniatura. No añadas métricas salvo que sean verificadas. La biblioteca se actualiza automáticamente.
+- **Videos:** el sitio está conectado al feed público del canal `@TechFoundersLab` y se actualiza automáticamente cada hora, sin API key. El arreglo `videos` funciona como respaldo manual si YouTube no responde.
 - **Libros:** agrega un objeto al arreglo `books`. Usa `proximamente` hasta tener una fecha y un enlace de compra confirmados.
 - **Enlaces oficiales:** completa `youtubeUrl`, `email` y, si corresponde, `parsifalUrl` dentro de `site`.
 - **Fotografía:** cuando exista una foto oficial de Carolina, guárdala en `public/images/` y reemplaza los bloques `CL.` mediante `next/image` con un texto alternativo descriptivo.

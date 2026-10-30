@@ -22,7 +22,8 @@ export const site = {
   tagline: "Del código a la creación de oportunidades.",
   author: "Carolina Lagos",
   email: "",
-  youtubeUrl: "",
+  youtubeUrl: "https://www.youtube.com/@TechFoundersLab",
+  youtubeChannelId: "UCf2k-C1MSp9dit78NPI6aeA",
   parsifalUrl: "",
 };
 
