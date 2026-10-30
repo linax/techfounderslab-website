@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #101827;
+  --blue: #2563eb;
+  --teal: #0d9488;
+  --paper: #f4f6f8;
+  --yellow: #facc15;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: #fff; font-family: Arial, Helvetica, sans-serif; }
+a, button, input, textarea, select { outline-offset: 4px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid var(--yellow); }
+::selection { background: #bfdbfe; color: var(--ink); }
+
+.container-page { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+.eyebrow { color: var(--teal); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.display { font-size: clamp(2.75rem, 7vw, 6.7rem); line-height: .94; letter-spacing: -.065em; font-weight: 850; }
+.section-title { font-size: clamp(2rem, 4vw, 4rem); line-height: 1; letter-spacing: -.045em; font-weight: 800; }
+.text-balance { text-wrap: balance; }
+.grid-lines { background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.07) 1px, transparent 1px); background-size: 48px 48px; }
+.card-lift { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(16,24,39,.09); border-color: #bfdbfe; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
