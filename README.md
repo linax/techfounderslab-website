@@ -23,13 +23,13 @@ El contenido editable vive en `content/site.ts`:
 
 ## Newsletter y contacto
 
-Los formularios actuales son deliberadamente transparentes: validan los campos pero no fingen guardar información. Para activarlos:
+El formulario de newsletter envía el correo a Beehiiv desde `app/api/newsletter/route.ts`; la API key solo se usa en el servidor. Para activarlo en local y producción:
 
-1. Elige un proveedor con doble opt-in (por ejemplo, Buttondown, Kit o Brevo).
-2. Crea una Route Handler en `app/api/newsletter/route.ts` que valide el email en servidor y llame al proveedor con una clave almacenada en variables de entorno.
-3. Cambia `components/newsletter-form.tsx` para enviar a esa ruta y mostrar éxito únicamente después de una confirmación real del servidor.
-4. Conecta el formulario de colaboraciones del mismo modo o usa un email oficial.
-5. Actualiza la política de privacidad antes del lanzamiento.
+1. Crea una API key de Beehiiv con permiso para crear suscripciones (`subscriptions:write`).
+2. Define `BEEHIIV_API_KEY` y `BEEHIIV_PUB_ID` como variables privadas en `.env` o `.env.local` y en el entorno de despliegue. El ID de publicación debe ser el ID prefijado que muestra Beehiiv (por ejemplo, `pub_...`); no añadas estas variables con el prefijo `NEXT_PUBLIC_`.
+3. Configura el doble opt-in en Beehiiv. La integración respeta esa configuración y muestra instrucciones para confirmar por correo cuando la suscripción queda pendiente.
+4. El formulario de colaboraciones sigue sin enviar información: conéctalo por separado o usa un email oficial.
+5. Completa y revisa legalmente la política de privacidad antes del lanzamiento.
 
 ## Analítica
 

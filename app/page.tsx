@@ -18,7 +18,7 @@ export default async function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#101827] via-transparent to-[#101827]/25" />
         <div className="absolute inset-x-0 bottom-0 p-7">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-teal-300">Carolina Lagos</p>
-        <p className="mt-2 text-2xl font-black leading-tight">Ingeniera · Emprendedora<br />Creadora de TechFoundersLab</p>
+        <p className="mt-2 text-2xl font-black leading-tight">Ing. de Software · Mg. en innovación<br />Creadora de TechFoundersLab</p>
         </div>
         </div>
        
