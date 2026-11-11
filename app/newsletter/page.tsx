@@ -14,7 +14,7 @@ export default function NewsletterPage() { return <>
         </div>
         <div className="rounded-3xl bg-white p-6 text-[#101827] shadow-2xl sm:p-9">
             <p className="eyebrow">Cada semana</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Recíbela en tu correo.</h2>
+            <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">Recíbelo en tu correo.</h2>
             <p className="mt-4 leading-7 text-slate-600">Ideas, aprendizajes y herramientas sobre IA, tecnología y creación de productos, directo en tu correo.</p>
             <NewsletterForm />
         </div>
