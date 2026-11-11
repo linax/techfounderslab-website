@@ -49,7 +49,7 @@ export function NewsletterForm({ dark = false }: { dark?: boolean }) {
     <div className="flex flex-col gap-3 sm:flex-row">
       <label className="sr-only" htmlFor="newsletter-email">Correo electrónico</label>
       <input id="newsletter-email" name="email" type="email" autoComplete="email" required maxLength={254} disabled={isSubmitting} placeholder="tu@email.com" className={`min-h-13 flex-1 rounded-xl border px-4 ${dark ? "border-white/20 bg-white/10 text-white placeholder:text-slate-400" : "border-slate-300 bg-white"}`} />
-      <button className="min-h-13 rounded-xl bg-blue-600 px-6 font-bold text-white hover:bg-blue-700 disabled:cursor-wait disabled:opacity-60" type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando..." : "Quiero recibirla"}</button>
+      <button className="min-h-13 rounded-xl bg-blue-600 px-6 font-bold text-white hover:bg-blue-700 disabled:cursor-wait disabled:opacity-60" type="submit" disabled={isSubmitting}>{isSubmitting ? "Enviando..." : "Quiero recibirlo"}</button>
     </div>
     <label className={`mt-4 flex items-start gap-3 text-xs leading-5 ${dark ? "text-slate-400" : "text-slate-600"}`}><input name="consent" value="true" required disabled={isSubmitting} className="mt-1" type="checkbox" /> Acepto recibir la newsletter y he leído la <LinkInline href="/privacidad">política de privacidad</LinkInline>. Podré darme de baja cuando quiera.</label>
     <p id="newsletter-note" className={`mt-3 text-xs ${dark ? "text-slate-500" : "text-slate-500"}`}>Frecuencia quincenal. Sin ruido ni promesas de éxito fácil.</p>

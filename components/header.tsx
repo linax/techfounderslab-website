@@ -5,7 +5,7 @@ import { useState } from "react";
 import { MenuIcon } from "./icons";
 
 const links = [
-  ["Videos", "/videos"], ["Newsletter", "/newsletter"], ["Libros", "/libros"], ["Sobre mí", "/sobre-mi"], ["Colaboraciones", "/colaboraciones"],
+  ["Videos", "/videos"], ["Newsletter", "/newsletter"], ["Sobre mí", "/sobre-mi"], ["Colaboraciones", "/colaboraciones"],
 ];
 
 export function Header() {
