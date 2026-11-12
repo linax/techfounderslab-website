@@ -28,7 +28,7 @@ El formulario de newsletter envía el correo a Beehiiv desde `app/api/newsletter
 1. Crea una API key de Beehiiv con permiso para crear suscripciones (`subscriptions:write`).
 2. Define `BEEHIIV_API_KEY` y `BEEHIIV_PUB_ID` como variables privadas en `.env` o `.env.local` y en el entorno de despliegue. El ID de publicación debe ser el ID prefijado que muestra Beehiiv (por ejemplo, `pub_...`); no añadas estas variables con el prefijo `NEXT_PUBLIC_`.
 3. Configura el doble opt-in en Beehiiv. La integración respeta esa configuración y muestra instrucciones para confirmar por correo cuando la suscripción queda pendiente.
-4. El formulario de colaboraciones sigue sin enviar información: conéctalo por separado o usa un email oficial.
+4. Para colaboraciones, crea la tabla indicada abajo en Supabase y define `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` como variables privadas del servidor en `.env.local` y en el entorno de despliegue. No uses el prefijo `NEXT_PUBLIC_` para la clave.
 5. Completa y revisa legalmente la política de privacidad antes del lanzamiento.
 
 ## Analítica
@@ -51,3 +51,23 @@ No hay analítica ni cookies instaladas. Si se configura una herramienta, regist
 - Email o endpoint de colaboraciones.
 - Dominio definitivo y revisión legal de privacidad.
 - Imagen Open Graph propia.
+
+### Tabla de solicitudes de colaboración en Supabase
+
+Ejecuta este SQL en el editor SQL de Supabase. Las solicitudes quedan protegidas frente a lectura directa desde el navegador; solo el endpoint del servidor, con su clave privada, las inserta.
+
+```sql
+create table public.collaboration_requests (
+  id bigint generated always as identity primary key,
+  name text not null,
+  email text not null,
+  organization text not null,
+  message text not null,
+  consent boolean not null check (consent = true),
+  created_at timestamptz not null default now()
+);
+
+alter table public.collaboration_requests enable row level security;
+```
+
+Guarda `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` como variables privadas en el entorno de despliegue. La clave de servicio de Supabase debe permanecer solo en el servidor.
